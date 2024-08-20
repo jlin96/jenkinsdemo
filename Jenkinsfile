@@ -2,21 +2,12 @@ pipeline {
     agent any
 
     stages{
-        stage('Build'){
+        stage('Build Frontend'){
             steps{
-                sh "echo Building Stage1"
-            }
-        }
-
-        stage('Test') {
-            steps{
-                sh "echo Testing Stage2"
-            }
-        }
-
-        stage('Deploy') {
-            steps{
-                sh "echo Deploying Stage3"
+                sh "echo Building Frontend"
+                sh "cd frontend"
+                sh "npm install"
+                sh "npm run build"
             }
         }
     }
